@@ -17,6 +17,7 @@
   		
         <route id="rest-ret">
  		   <from uri="direct:allin"/>
+<log message="${body}"/>
     		 <transform id="transform1">
                 <constant>  	
                 	&lt;?xml version="1.0" encoding="UTF-8"?&gt;
