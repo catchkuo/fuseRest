@@ -2,30 +2,26 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        http://camel.apache.org/schema/spring       http://camel.apache.org/schema/spring/camel-spring.xsd">
     <camelContext id="camel" xmlns="http://camel.apache.org/schema/spring">
-
-
-		<restConfiguration component="netty4-http" port="8888"/>
-		<rest path="/app">
-    		<get uri="/foo">
-      			<to uri="direct:allin"/>
-    		</get>
-    		<post uri="/foo">
-      			<to uri="direct:allin"/>
-    		</post>
-    		
-  		</rest>
-  		
+        <restConfiguration component="netty4-http" port="8888"/>
+        <rest id="rest-86e69917-9785-4fa3-810a-e1ce4f6e5094" path="/app">
+            <get id="get-52587792-8622-4e71-98fc-388a46add725" uri="/foo">
+                <to uri="direct:allin"/>
+            </get>
+            <post id="post-a14f4d89-6421-4fdd-926c-43439b14e4a0" uri="/foo">
+                <to uri="direct:allin"/>
+            </post>
+        </rest>
         <route id="rest-ret">
- 		   <from uri="direct:allin"/>
-<log message="${body}"/>
-    		 <transform id="transform1">
+            <from id="_from1" uri="direct:allin"/>
+            <log id="_log1" message="${body}"/>
+            <transform id="transform1">
                 <constant>  	
                 	&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;XML&gt;
 &lt;Header&gt;
-&lt;TxID&gt;v2-91148Y_T&lt;/TxID&gt;
+&lt;TxID&gt;v2FCB91148Y_T&lt;/TxID&gt;
 &lt;SystemKey&gt;FCB00&lt;/SystemKey&gt;
-&lt;TxSeqNo&gt;v2-90805151601&lt;/TxSeqNo&gt;
+&lt;TxSeqNo&gt;20190805151601&lt;/TxSeqNo&gt;
 &lt;MsgSeqNo&gt;20009&lt;/MsgSeqNo&gt;
 &lt;CltTimeStamp&gt;2019-08-05 15:16:01.013&lt;/CltTimeStamp&gt;
 &lt;CustID&gt;

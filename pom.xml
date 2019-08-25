@@ -13,6 +13,8 @@
     <maven-compiler-plugin.version>3.6.0</maven-compiler-plugin.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
+	<spring.boot-version>2.0.4.RELEASE</spring.boot-version>
+		
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -114,18 +116,24 @@
           </execution>
         </executions>
       </plugin>
-      <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>1.5.8.RELEASE</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+    <plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${spring.boot-version}</version>
+				<configuration>
+					<nonFilteredFileExtensions>
+						<nonFilteredFileExtension>js</nonFilteredFileExtension>
+					</nonFilteredFileExtensions>
+					<includeSystemScope>true</includeSystemScope>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
     </plugins>
   </build>
   <profiles>
@@ -183,7 +191,9 @@
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-devtools</artifactId>
-    <version>1.5.8.RELEASE</version>
+    <version>${spring.boot-version}</version>
+	<optional>true</optional>
+
 </dependency>
         
       </dependencies>
