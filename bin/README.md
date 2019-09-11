@@ -1,6 +1,3 @@
-
-Testing End point http://0.0.0.0:8888/app/foo/1
-
 # Spring-Boot Camel QuickStart
 
 This example demonstrates how you can use Apache Camel with Spring Boot.
