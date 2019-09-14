@@ -2,7 +2,13 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        http://camel.apache.org/schema/spring       http://camel.apache.org/schema/spring/camel-spring.xsd">
     <camelContext id="camel" logMask="true" xmlns="http://camel.apache.org/schema/spring">
-        <restConfiguration component="netty4-http" port="8888"/>
+        <restConfiguration>
+            <!--         	<componentProperty key="contextPath" value="/obank"/> -->
+        </restConfiguration>
+        
+        
+      
+    
         <rest id="rest-86e69917-9785-4fa3-810a-e1ce4f6e5094" path="/app">
             <get id="get-52587792-8622-4e71-98fc-388a46add725" uri="/foo/{pwd}">
                 <to uri="direct:allin"/>
@@ -11,6 +17,9 @@
                 <to uri="direct:allin"/>
             </post>
         </rest>
+        
+        
+        
         <route id="_route1">
             <from id="_from2" uri="direct:foo"/>
             <to id="_to1" uri="log:foo?logMask=true"/>
