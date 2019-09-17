@@ -48,11 +48,26 @@
   			<artifactId>camel-servlet-starter</artifactId>
 		</dependency>
 		<dependency>
+  <groupId>org.apache.camel</groupId>
+  <artifactId>camel-http-starter</artifactId>
+  
+
+</dependency>
+		<dependency>
 			<groupId>org.apache.camel</groupId>
 			<artifactId>camel-servlet</artifactId>
 		</dependency>
+		<dependency>
+    <groupId>org.apache.camel</groupId>
+    <artifactId>camel-http</artifactId>
+    
+</dependency>
 		
+				<dependency>
+    <groupId>org.apache.camel</groupId>
+    <artifactId>camel-jetty</artifactId>
 
+</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -203,6 +218,7 @@
 					<artifactId>jboss-rmi-api_1.0_spec</artifactId>
 					<version>1.0.6.Final</version>
 				</dependency>
+
 			</dependencies>
 		</profile>
 	</profiles>

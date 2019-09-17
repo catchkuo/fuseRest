@@ -5,11 +5,10 @@
         <restConfiguration>
             <!--         	<componentProperty key="contextPath" value="/obank"/> -->
         </restConfiguration>
-        
-        
-      
-    
         <rest id="rest-86e69917-9785-4fa3-810a-e1ce4f6e5094" path="/app">
+         	<get id="get-52587792-8622-4e71-98fc-388a46add725" uri="/">
+                <to uri="direct:allin"/>
+            </get>
             <get id="get-52587792-8622-4e71-98fc-388a46add725" uri="/foo/{pwd}">
                 <to uri="direct:allin"/>
             </get>
@@ -17,9 +16,6 @@
                 <to uri="direct:allin"/>
             </post>
         </rest>
-        
-        
-        
         <route id="_route1">
             <from id="_from2" uri="direct:foo"/>
             <to id="_to1" uri="log:foo?logMask=true"/>
@@ -77,6 +73,13 @@
                 	
                 </constant>
             </transform>
+              
+              
+    <setHeader headerName="Exchange.HTTP_METHOD">
+        <constant>POST</constant>
+    </setHeader>
+  <removeHeaders pattern="CamelHttp*"/>
+       <to uri="https://testsfdcesb.o-bank.com/BusinessServices/ServiceMediationService.serviceagent/ServiceMediationOperation"/>
         </route>
     </camelContext>
     <bean class="org.mycompany.MyCustomExchangeFormatter"
