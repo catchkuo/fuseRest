@@ -74,13 +74,12 @@
                 </constant>
             </transform>
               
-              <!--
-    <setHeader headerName="Exchange.HTTP_METHOD">
-        <constant>POST</constant>
-    </setHeader>
-  <removeHeaders pattern="CamelHttp*"/>
-       <to uri="https://testsfdcesb.o-bank.com/BusinessServices/ServiceMediationService.serviceagent/ServiceMediationOperation"/>
-            -->
+              
+<!--     <setHeader headerName="Exchange.HTTP_METHOD"> -->
+<!--         <constant>POST</constant> -->
+<!--     </setHeader> -->
+<!--   <removeHeaders pattern="CamelHttp*"/> -->
+<!--        <to uri="https://testsfdcesb.o-bank.com/BusinessServices/ServiceMediationService.serviceagent/ServiceMediationOperation"/> -->
         </route>
     </camelContext>
     <bean class="org.mycompany.MyCustomExchangeFormatter"
